@@ -22,20 +22,21 @@ function rollDice(diceSide=6) {
 
 // console.log("The dice roll is: " + rollDice());
 
-const diceSide = promptSync("How many sided dice do you want to roll? ");
-
-try {
-    const parsedDiceSide = parseInt(diceSide);
-    if (isNaN(parsedDiceSide)) {
-        throw new Error("Please enter a number");
+function getDiceSide(){
+    const diceSide = promptSync("How many sided dice do you want to roll? ");
+    try {
+        const parsedDiceSide = parseInt(diceSide);
+        if (isNaN(parsedDiceSide)) {
+            throw new Error("Please enter a number");
+        }
+        const diceResults = rollDice(parsedDiceSide);
+        console.log(`You rolled a ${diceResults}.`);
+    } catch (error) {
+        console.error("You got an error!");
+        console.log(error);
     }
-    const diceResults = rollDice(parsedDiceSide);
-    console.log(`You rolled a ${diceResults}.`);
-} catch (error) {
-    console.error("You got an error!");
-    console.log(error);
 }
-
+getDiceSide();
 
 // const prompt = inquirer.createPromptModule();
 // prompt([
