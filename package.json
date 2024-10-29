@@ -19,7 +19,8 @@
   "author": "Luke",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^12.0.1"
+    "inquirer": "^12.0.1",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
     "jsdoc": "^4.0.4",
